@@ -1,0 +1,21 @@
+## MAC files ##
+.DS_Store
+
+## NPM ##
+npm
+npm-debug.log
+node_modules/
+newrelic.js
+newrelic_agent.log
+## Config ##
+database/config.js
+.eslintrc.js
+jsconfig.json
+## VS CODE##
+.vscode
+.nvmrc
+
+# Compiled Dirs (http://nodejs.org/api/addons.html)
+build/
+
+
