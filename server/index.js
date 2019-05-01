@@ -2,15 +2,21 @@ require('newrelic');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const path = require('path');
 const cors = require ('cors');
 const db = require('../database/PGindex');
 const port = process.env.PORT || 2002;
 app.use(cors());
 
-app.use('/:id', express.static(__dirname + '/../client/dist'));
+app.use('/cast/:id', express.static(__dirname + '/../client/dist'));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.get('/loaderio-628e04771877d603bfb6aefc9ad60929', (req, res) => {
+  const filePath = path.join(__dirname, './loaderio-628e04771877d603bfb6aefc9ad60929.txt');
+  res.sendFile(filePath);
+});
 
 app.get('/actors/:id', async (req, res) => {
   let movieId = Number(req.params.id);
