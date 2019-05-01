@@ -1,6 +1,6 @@
 ## MAC files ##
 .DS_Store
-
+package-lock.json
 ## NPM ##
 npm
 npm-debug.log

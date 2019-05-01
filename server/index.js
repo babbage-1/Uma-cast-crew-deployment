@@ -12,9 +12,10 @@ app.use('/cast/:id', express.static(__dirname + '/../client/dist'));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+//loaderio-796d234e3b2792b1f130d843c1f32c59
 
-app.get('/loaderio-628e04771877d603bfb6aefc9ad60929', (req, res) => {
-  const filePath = path.join(__dirname, './loaderio-628e04771877d603bfb6aefc9ad60929.txt');
+app.get('/loaderio-796d234e3b2792b1f130d843c1f32c59', (req, res) => {
+  const filePath = path.join(__dirname, './loaderio-796d234e3b2792b1f130d843c1f32c59.txt');
   res.sendFile(filePath);
 });
 
