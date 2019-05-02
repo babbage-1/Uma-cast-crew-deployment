@@ -7,7 +7,6 @@ const pool = new Pool({
   database: config.database,
   password: config.password,
   port: config.port,
-  max: config.max,
 });
 
 //Postres query SELECT * from ActorInfo INNER JOIN MovieInfo ON movieinfo.ACTORID=actorInfo.ID WHERE movieinfo.movieid=movieid;
