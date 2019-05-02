@@ -7,6 +7,7 @@ const pool = new Pool({
   database: config.database,
   password: config.password,
   port: config.port,
+  max: config.max,
 });
 
 //Postres query SELECT * from ActorInfo INNER JOIN MovieInfo ON movieinfo.ACTORID=actorInfo.ID WHERE movieinfo.movieid=movieid;
@@ -14,7 +15,7 @@ const pool = new Pool({
 const getActorById = async (id) => {
   const getQuery = {
     name: 'read-ActorInfo-for-Movie',
-    text: 'SELECT * from ActorInfo INNER JOIN MovieInfo ON movieinfo.ACTORID=actorInfo.ID WHERE movieinfo.movieid=$1',
+    text: 'SELECT * from ActorInfo WHERE id IN (SELECT actorId FROM MovieInfo WHERE movieid=$1)',
     values: [id],
   }
   try {
